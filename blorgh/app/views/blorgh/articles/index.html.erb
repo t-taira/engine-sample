@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Articles</h1>
+<%= link_to "New Article", new_article_path %>
+<% @articles.each do |article| %>
+  <h2><%= link_to article.title, article %></h2>
+  <small>By <%= article.author %></small>
+  <%= simple_format(article.text) %>
+  <hr>
+<% end %>
